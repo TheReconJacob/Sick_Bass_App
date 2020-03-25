@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css?family=Smythe&display=swap");
+section {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto;
+  grid-gap: 10px;
+  padding: 10px;
+}
+body {
+  background: grey;
+  color: white;
+}
+
+div[class*="offplaying"] {
+  border-style: solid;
+  border-color: black;
+}
+
+#tracks {
+  margin: auto;
+  width: 50%;
+  background-color: black;
+  height: 75px;
+  width: 400px;
+  border: 3px solid grey;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+#modal {
+  margin: 0;
+  padding: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  color: black;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+#modalitem {
+  position: fixed;
+  top: 30%;
+  left: 40%;
+  background-color: white;
+  width: 20%;
+  height: 20%;
+  border-radius: 5%;
+}
+
+#modaltext {
+  position: relative;
+  top: 30%;
+  left: 20%;
+}
+
+div[class*="onplaying"] {
+  border-style: solid;
+  border-color: white;
+}
+#canvas {
+  position: relative;
+  left: 10%;
+}
+.grid-container > div {
+  background-color: white;
+  text-align: center;
+  padding: 50%;
+}
+
+.grid-container > div:hover {
+  background-color: grey;
+}
+.grid-container > div.on {
+  background-color: black;
+}
+.grid-container > div[class*="onplaying"] {
+  background-color: black;
+}
+@media screen and (min-width: 30em) {
+  /* css for small screens goes here */
+}
+@media screen and (min-width: 30em) and (max-width: 60em) {
+  /* css for mid screens goes here */
+}
+@media screen and (min-width: 60em) {
+  /* css for massive screens goes here */
+}
