@@ -240,7 +240,7 @@ const viewMain = state => `
   <section>
       <article>
       <div class="grid-container">
-          ${((i = 1),
+          ${((i = 0),
           state.grid
             .map((row, rowIndex) => {
               return row
