@@ -92,9 +92,10 @@ const update = {
     state.worker = null;
     state.modal = true;
     state.bar = -1;
+
     return state;
   },
-  dismissModal: function(state) {
+  dismissModal: function(state, ev) {
     state.modal = false;
     return state;
   },
@@ -194,6 +195,13 @@ const update = {
   }
 };
 const rendered = state => {
+  if (state.modal) {
+    let modalitem = document.getElementById("modalitem");
+    modalitem.addEventListener("click", function(e) {
+      e.stopPropagation();
+    });
+  }
+
   if (BaseAudio.analyser) {
     let audioArray;
     state.canvas = document.getElementById("canvas");
@@ -279,11 +287,11 @@ const viewMain = state => `
 `;
 
 const modal = state => `
-<section id="modal">
+<section id="modal" onclick="app.run('dismissModal')">
         <form id="modalitem" onsubmit="app.run('save', this); return false;">
           <div id="modaltext">
               <label>Track Name</label>
-              <input id="trackname" name="trackname" pattern="[a-zA-Z0-9_]+" title="no special characters" required /><br /><br />
+              <input id="trackname" name="trackname"" pattern="[a-zA-Z0-9_]+" title="no special characters" required /><br /><br />
               <button type="reset" onclick="app.run('dismissModal')">Don't Save</button>
               <button type="submit">Save</button>
           </div>
